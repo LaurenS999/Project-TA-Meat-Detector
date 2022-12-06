@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/item_home"
+    >
+
+    <fragment
+        android:id="@+id/cropFragment"
+        android:name="com.example.meatdetector_ta.view.CropFragment"
+        android:label="Deteksi Jenis dan Kesegaran Daging"
+        tools:layout="@layout/fragment_crop" >
+        <action
+            android:id="@+id/actionKlasifikasiFragment"
+            app:destination="@id/klasifikasiFragment" />
+        <argument
+            android:name="Path"
+            app:argType="string" />
+        <action
+            android:id="@+id/actionMainFragment"
+            app:destination="@id/item_home" />
+        <argument
+            android:name="tipe"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/item_informasi"
+        android:name="com.example.meatdetector_ta.view.InformasiFragment"
+        android:label="Deteksi Jenis dan Kesegaran Daging"
+        tools:layout="@layout/fragment_informasi" />
+    <fragment
+        android:id="@+id/klasifikasiFragment"
+        android:name="com.example.meatdetector_ta.view.KlasifikasiFragment"
+        android:label="Deteksi Jenis dan Kesegaran Daging"
+        tools:layout="@layout/fragment_klasifikasi" >
+        <action
+            android:id="@+id/action_klasifikasiFragment_to_mainFragment"
+            app:destination="@id/item_home" />
+        <argument
+            android:name="Path"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/item_home"
+        android:name="com.example.meatdetector_ta.view.MainFragment"
+        android:label="Deteksi Jenis dan Kesegaran Daging"
+
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/actionCropFragment"
+            app:destination="@id/cropFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/item_bantuan"
+        android:name="com.example.meatdetector_ta.view.BantuanFragment"
+        android:label="Deteksi Jenis dan Kesegaran Daging" />
+</navigation>
